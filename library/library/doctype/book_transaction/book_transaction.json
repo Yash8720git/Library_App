@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-25 14:32:08.587488",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "books",
+  "user",
+  "column_break_ofps",
+  "issue_date",
+  "status",
+  "return_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "books",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Books",
+   "options": "Books",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Issue\nReturn",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date",
+   "read_only": 1,
+   "read_only_depends_on": "eval:doc.status !== \"Return\"\n"
+  },
+  {
+   "fieldname": "column_break_ofps",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-25 15:11:33.434267",
+ "modified_by": "Administrator",
+ "module": "Library",
+ "name": "Book Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
